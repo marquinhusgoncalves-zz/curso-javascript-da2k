@@ -33,7 +33,7 @@ function returnString() {
 // Invoque a função criada acima.
 returnString();
 
-// Qual o retorno da função? (Use comentários de bloco).
+// Qual o retorno da função? (Use comentários de bloco)
 O valor da variável agora é 10
 
 /*
