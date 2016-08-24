@@ -14,6 +14,7 @@ var isTruthy = function(x) {
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(false);
 isTruthy(0);
+isTruthy(-0);
 isTruthy("");
 isTruthy(null);
 isTruthy(undefined);
@@ -27,7 +28,11 @@ isTruthy({});
 isTruthy([]);
 isTruthy(42);
 isTruthy("foo");
-isTruthy(new Date()
+isTruthy("Marquinhus");
+isTruthy(new Date();
+isTruthy(function() {});
+isTruthy(1 + 1);
+isTruthy(2 * 2);
 );
 
 /*
@@ -88,7 +93,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function() {
-  return "Esse carro é um " + carro.marca + " " + carro.modelo;
+  return "Esse carro é um " + carro.obterMarca() + " " + carro.obterModelo();
 }
 
 /*
@@ -108,17 +113,16 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.addPessoas = function(x) {
+  var vagas = carro.assentos - carro.quantidadePessoas;
+  var singularOuPlural = vagas === 1 ? " pessoa" : " pessoas";
   if (carro.quantidadePessoas >= carro.assentos) {
     return "Já temos " + carro.quantidadePessoas + " pessoas no carro!" + "\nO carro já está lotado!";
   }else if (carro.quantidadePessoas <= carro.assentos) {
-    var vagas = carro.assentos - carro.quantidadePessoas;
     if (vagas >= x) {
     carro.quantidadePessoas += x;
     return "Já temos " + carro.quantidadePessoas + " pessoas no carro!";
-    }else if (vagas < x && vagas != 1) {
-     return "Só cabem mais " + vagas + " pessoas!";
     }else {
-     return "Só cabem mais " + vagas + " pessoa!";
+      return "Só cabem mais " + vagas + singularOuPlural + "!";
     }
   }
 }
@@ -131,38 +135,40 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor(); //"branca"
 
 // Mude a cor do carro para vermelho.
-?
+carro.mudaCor("vermelho");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //"vermelho"
 
 // Mude a cor do carro para verde musgo.
-?
+carro.mudaCor("verde musgo");
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor(); //"verde musgo"
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo(); //"Esse carro é um BMW 120i"
 
 // Adicione 2 pessoas no carro.
-?
+carro.addPessoas(2); //"Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.addPessoas(4); //"Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+carro.addPessoas(3); //"Já temos 5 pessoas no carro!"
+carro.addPessoas(1); //"Já temos 5 pessoas no carro! O carro já está lotado!"
 
 // Tire 4 pessoas do carro.
-?
+carro.addPessoas(-4); //1
 
 // Adicione 10 pessoas no carro.
-?
+carro.addPessoas(10); //"Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas //1
+
 ```
