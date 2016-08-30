@@ -12,7 +12,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-// ?
+var teams = ['São Paulo', 'Santos', 'Palmeiras', 'Portuguesa', 'São Bernardo'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -32,7 +32,13 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     - Se não houver time para a posição passada, deve retornar a mensagem:
     "Não temos a informação do time que está nessa posição."
 */
-// ?
+function showTeamPosition( number ) {
+    if( !number || number > teams.length ) {
+        return console.log('Não temos a informação do time que está nessa posição.');
+    }
+    return console.log('O time que está em ' + number + 'º lugar é o ' + teams[number - 1] + '.');
+}
+showTeamPosition(5);
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
