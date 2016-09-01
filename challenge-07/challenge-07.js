@@ -1,13 +1,16 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-// ?
-
+var arr = [1, "Marquinhus", true, {eu: 'vivo'}, function(){} ];
+console.log(arr.length)
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
 A função deverá retornar o array atualizado.
 */
-// ?
+function addItem( item ) {
+  arr.push( item );
+  console.log( arr );
+}
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
