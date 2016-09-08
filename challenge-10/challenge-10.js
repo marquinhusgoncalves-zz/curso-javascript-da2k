@@ -25,7 +25,23 @@
   função receberá dois parâmetros e retornará a operação referente à sua
   propriedade, usando os valores passados por parâmetro.
   */
-  // ?
+  var operation = {
+    '+' : function( x , y ) {
+      return x + y;
+    },
+    '-': function( x , y ) {
+      return x - y;
+    },
+    '*': function( x , y ) {
+      return x * y;
+    },
+    '/': function( x , y ) {
+      return x / y;
+    },
+    '%': function( x , y ) {
+      return x % y;
+    }
+  }
 
   /*
   Crie uma função chamada `isOperatorValid`, que receberá um operador por
@@ -37,7 +53,11 @@
   Caso contrário, "false".
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
-  // ?
+  console.log( operation );
+  function isOperatorValid( operator ) {
+    return operator == operation['+'] ? true : false;
+  }
+  console.log( isOperatorValid() );
 
   /*
   Agora vamos criar a calculadora.
@@ -51,7 +71,6 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  // ?
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
