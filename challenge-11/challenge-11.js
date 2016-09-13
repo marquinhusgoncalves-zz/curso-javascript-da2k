@@ -11,7 +11,7 @@
   var once = false
   do {
     console.log( 'Entrou ao menos uma vez!' );
-  }while(once === true);
+  }while(once);
 
   /*
   Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -34,15 +34,13 @@
   Após o loop, mostre a frase:
   'The person has [COUNTER] properties'
   */
-console.log(person[0]);
-  for(var i = 0; i <= person.length ; i++) {
-    console.log('The ' + person[i] + ' of person is ' + person[i]);
-  };
-  for (var i = 0; i < person.length; i++){
-    var value = person[i];
-    var index = i;   // desnecessário, mas coloquei para clarificar
-    console.log(value);
-}
+  var i = 0;
+  for(persons in person) {
+    console.log('The ' + persons + ' of person is ' + person[persons]);
+    i++;
+  }
+  console.log('The person has ' + i + ' properties');
+
   /*
   Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
   criado acima) é mais velha que a idade passada por parâmetro.
@@ -50,7 +48,11 @@ console.log(person[0]);
   Após a função, mostrar a mensagem no console:
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
-  // ?
+  function moreThan( age ) {
+    return age > person.age ? true : false
+  }
+  console.log('The person has more than 32 years old? [TRUE/FALSE]');
+  console.log(moreThan(35));
 
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -58,7 +60,15 @@ console.log(person[0]);
   Mostre no console os números no array.
   */
   console.log( 'De 0 a 10:' );
-  // ?
+  var numbers = [];
+
+  for(var i = 0; i <= 20; i++) {
+    if(i > 10) {
+      break;
+    }
+    numbers.push(i);
+  }
+  console.log(numbers);
 
   /*
   Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -67,5 +77,10 @@ console.log(person[0]);
   Mostrar no console os números do array.
   */
   console.log( 'Pares de 0 a 20:' );
-  // ?
+  var numbers = [];
+  for(var i = 0; i <=20; i++) {
+    if(i % 2 == 0)
+    numbers.push(i);
+  }
+  console.log(numbers);
 })();
