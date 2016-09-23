@@ -73,5 +73,9 @@
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log( '\nNova idade das pessoas:' );
+  console.log( marcus.addAge(1) );
+  console.log( vinicius.addAge(2) );
+  console.log( jessica.addAge(8) );
+
   // ?
 })();
