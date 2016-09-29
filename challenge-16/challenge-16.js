@@ -17,7 +17,7 @@
   */
   console.log( 'As letras do seu nome:' );
   var name = 'Marcus';
-  for( var i = 0; i <= name.length; i++ ) {
+  for( var i = 0; i < name.length; i++ ) {
     console.log( name[i] + ' é a ' + ( i + 1 ) + ' letra do meu nome.' );
   }
 
@@ -36,9 +36,11 @@
   console.log( '\nNome convertido à partir de um slug:' );
   var fullName = 'marcus-vinicis-gonçalves';
   var name = fullName.split('-');
+  var aux = [];
   for( var i = 0; i < name.length; i++ ) {
-    console.log( name[i].charAt(0).toUpperCase() + name[i].slice(1) );
+    aux.push( name[i].charAt(0).toUpperCase() + name[i].slice(1) );
   }
+  console.log( aux.join( ' ' ) );
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -51,12 +53,25 @@
   */
   console.log( '\nMeus amigos:' );
   var arr = [ 'Ana', 'Bruna', 'Carla', 'Dani', 'Erica' ];
-  for( var i = 0; i <= arr.length; i++ ) {
-    if( i == arr.length ) {
-      // arr.push( 'teste' );
+  var aux = [];
+  var t = '';
+  arr.reduce( function( a, b, c, d ) {
+    aux.push( b );
+    if( c !== arr.length - 2 ) {
+      if( c === arr.length -1 ) {
+        // console.log( t += arr[c] + ' ' );
+        t += arr[c] + ' ';
+      }else {
+        // console.log( t += arr[c] + ', ' );
+        t += arr[c] + ', ';
+      }
+    }else {
+      // console.log( t += arr[c] + ' e ' );
+      t += arr[c] + ' e ';
     }
-  }
-  console.log( arr );
+  }, 0);
+  console.log(t);
+
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
@@ -82,13 +97,14 @@
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
   var myName = 'Marcus';
-  var teste = [];
-  for(var i = 0; i <= myName.length; i++) {
+  var aux = [];
+  for(var i = 0; i < myName.length; i++) {
     if( i % 2 === 0 ) {
-      console.log( myName[i].toUpperCase() );
+      aux.push( myName[i].toUpperCase() );
     }else if (i % 2 !== 0 ) {
-        console.log( myName[i].toLowerCase() );
+        aux.push( myName[i].toLowerCase() );
     }
   }
+  console.log( aux.join( '' ) );
 
 })();
