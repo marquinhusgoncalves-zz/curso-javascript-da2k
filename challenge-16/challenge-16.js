@@ -35,12 +35,10 @@
   */
   console.log( '\nNome convertido à partir de um slug:' );
   var fullName = 'marcus-vinicis-gonçalves';
-  var name = fullName.split('-');
-  var aux = [];
-  for( var i = 0; i < name.length; i++ ) {
-    aux.push( name[i].charAt(0).toUpperCase() + name[i].slice(1) );
-  }
-  console.log( aux.join( ' ' ) );
+  var name = fullName.split('-').map( function( name ) {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }).join( ' ' );
+  console.log( name );
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -53,24 +51,26 @@
   */
   console.log( '\nMeus amigos:' );
   var arr = [ 'Ana', 'Bruna', 'Carla', 'Dani', 'Erica' ];
-  var aux = [];
-  var t = '';
-  arr.reduce( function( a, b, c, d ) {
-    aux.push( b );
-    if( c !== arr.length - 2 ) {
-      if( c === arr.length -1 ) {
-        // console.log( t += arr[c] + ' ' );
-        t += arr[c] + ' ';
-      }else {
-        // console.log( t += arr[c] + ', ' );
-        t += arr[c] + ', ';
-      }
-    }else {
-      // console.log( t += arr[c] + ' e ' );
-      t += arr[c] + ' e ';
-    }
-  }, 0);
-  console.log(t);
+  // var aux = [];
+  // var t = '';
+  var ui = arr.reduce( function( a, b, c, d ) {
+  //   aux.push( b );
+  //   if( c !== arr.length - 2 ) {
+  //     if( c === arr.length -1 ) {
+  //       // console.log( t += arr[c] + ' ' );
+  //       t += arr[c] + ' ';
+  //     }else {
+  //       // console.log( t += arr[c] + ', ' );
+  //       t += arr[c] + ', ';
+  //     }
+  //   }else {
+  //     // console.log( t += arr[c] + ' e ' );
+  //     t += arr[c] + ' e ';
+  //   }
+  return a + b;
+  });
+
+  console.log( ui );
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
