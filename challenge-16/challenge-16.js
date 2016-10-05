@@ -51,26 +51,12 @@
   */
   console.log( '\nMeus amigos:' );
   var arr = [ 'Ana', 'Bruna', 'Carla', 'Dani', 'Erica' ];
-  // var aux = [];
-  // var t = '';
-  var ui = arr.reduce( function( a, b, c, d ) {
-  //   aux.push( b );
-  //   if( c !== arr.length - 2 ) {
-  //     if( c === arr.length -1 ) {
-  //       // console.log( t += arr[c] + ' ' );
-  //       t += arr[c] + ' ';
-  //     }else {
-  //       // console.log( t += arr[c] + ', ' );
-  //       t += arr[c] + ', ';
-  //     }
-  //   }else {
-  //     // console.log( t += arr[c] + ' e ' );
-  //     t += arr[c] + ' e ';
-  //   }
-  return a + b;
-  });
-
-  console.log( ui );
+  var phrase = arr.reduce( function( acumulado, atual, index ) {
+    console.log(arr[index], index, arr.length-1 );
+    var separador = index === arr.length -1 ? ' e ' : ', ';
+    return acumulado + separador + atual;
+  }).concat( ' são meus amigos.' );
+  console.log( phrase  );
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
