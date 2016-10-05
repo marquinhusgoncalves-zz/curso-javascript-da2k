@@ -84,12 +84,8 @@
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
   var myName = 'Marcus';
   var aux = [];
-  for(var i = 0; i < myName.length; i++) {
-    if( i % 2 === 0 ) {
-      aux.push( myName[i].toUpperCase() );
-    }else if (i % 2 !== 0 ) {
-        aux.push( myName[i].toLowerCase() );
-    }
+  for( var i = 0, len = myName.length; i < len; i++ ) {
+    i % 2 === 0 ? aux.push( myName[i].toUpperCase() ) : aux.push( myName[i].toLowerCase() );
   }
   console.log( aux.join( '' ) );
 
