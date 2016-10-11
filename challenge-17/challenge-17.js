@@ -37,14 +37,16 @@
   ser um traço. Mostre o resultado no console:
   */
   console.log( '\nTrocando números por -:' );
-  // ?
+  var newText3 = newText.replace(/\d/g, '-');
+  console.log( newText3 );
 
   /*
   Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
   minúsculo por "0" (número zero). Mostre o resultado no console:
   */
   console.log( '\nTrocando de "D" a "h" por "0":' );
-  // ?
+  var newText4 = newText.replace(/([D-Z][a-h])/g, '0');
+  console.log( newText4 );
 
   /*
   Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
