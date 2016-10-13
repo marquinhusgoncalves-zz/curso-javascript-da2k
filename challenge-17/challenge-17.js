@@ -45,7 +45,7 @@
   minúsculo por "0" (número zero). Mostre o resultado no console:
   */
   console.log( '\nTrocando de "D" a "h" por "0":' );
-  var newText4 = newText.replace(/([D-Z][a-h])/g, '0');
+  var newText4 = newText.replace(/[A-Za-h]/g, '0');
   console.log( newText4 );
 
   /*
@@ -53,14 +53,18 @@
   Mostre o resultado no console:
   */
   console.log( '\nTrocando "A" e "a" por "4":' );
-  // ?
+  var newText5 = newText.replace(/A|a/g, '4');
+  console.log( newText5 );
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
   o método `toUpperCase()`. Mostre o resultado no console:
   */
   console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-  // ?
+  var newText6 = newText.replace(/O Centauro de Luvas/g, function( regex ) {
+    return regex.toUpperCase();
+  });
+  console.log( newText6 );
 
   /*
   Agora iremos substituir as datas no formato "13 de junho de 1804" para
@@ -75,7 +79,51 @@
   "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
   */
   console.log( '\nMeses representados por números:' );
-  // ?
+  var numberMonth;
+  function getMonthNumber( nameMonth ) {
+    switch ( nameMonth ) {
+      case 'janeiro':
+        numberMonth = '01';
+        break;
+      case 'fevereiro':
+        numberMonth = '02';
+        break;
+      case 'março':
+        numberMonth = '03';
+        break;
+      case 'abril':
+        numberMonth = '04';
+        break;
+      case 'maio':
+        numberMonth = '05';
+        break;
+      case 'junho':
+        numberMonth = '06;'
+        break;
+      case 'julho':
+        numberMonth = '07;'
+        break;
+      case 'agosto':
+        numberMonth = '08';
+        break;
+      case 'setembro':
+        numberMonth = '09';
+        break;
+      case 'outubro':
+        numberMonth = '10';
+        break;
+      case 'novembro':
+        numberMonth = '11';
+        break;
+      case 'dezembro':
+        numberMonth = '12';
+        break;
+    }
+    console.log( 'O mês de ' + nameMonth + ' é representado pelo número ' + numberMonth + '.' );
+  }
+  getMonthNumber( 'março' );
+  getMonthNumber( 'setembro' );
+  getMonthNumber( 'dezembro' );
 
   /*
   Agora, declare uma variável chamada `regexDate` que irá receber a expressão
@@ -86,7 +134,8 @@
   Mostre a regex no console.
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-  // ?
+  var regexDate = '/(\d{2}) de (ju[nl]ho) de (\d{4})/g';
+  console.log( regexDate );
 
   /*
   Agora crie a função que irá fazer o replace dos dados. A função será chamada
@@ -96,5 +145,16 @@
   console o resultado.
   */
   console.log( '\nReplace de datas:' );
-  // ?
+  // function replaceDate() {
+  //   text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function( match, firstGourp, secondGroup) {
+  //     getMonthNumber( secondGroup );
+  //   });
+  // }
+  // replaceDate();
+  function replaceDate() {
+    text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function( ) {
+      getMonthNumber( arguments[2] );
+    });
+  }
+  replaceDate();
 })();
