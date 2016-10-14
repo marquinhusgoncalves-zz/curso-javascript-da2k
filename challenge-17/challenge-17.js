@@ -35,6 +35,9 @@
   ser um traço. Mostre o resultado no console:
   */
   console.log( '\nTrocando números por -:' );
+  // Opção 1
+  // console.log( text.replace(/[0-9]/g, '-') );
+  // Opção 2
   console.log( text.replace(/\d/g, '-') );
 
   /*
@@ -49,7 +52,12 @@
   Mostre o resultado no console:
   */
   console.log( '\nTrocando "A" e "a" por "4":' );
-  console.log( text.replace(/A|a/g, '4') );
+  // Opção1
+  // console.log( text.replace(/A|a/g, '4') );
+  // Opção2
+  // console.log( text.replace(/[Aa]/g, '4') );
+  // Opção3
+  console.log( text.replace(/[a]/gi, '4') );
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
@@ -73,51 +81,93 @@
   "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
   */
   console.log( '\nMeses representados por números:' );
-  var numberMonth;
+  // Opção1
+  // var numberMonth;
+  // function getMonthNumber( nameMonth ) {
+  //   switch ( nameMonth ) {
+  //     case 'janeiro':
+  //       numberMonth = '01';
+  //       break;
+  //     case 'fevereiro':
+  //       numberMonth = '02';
+  //       break;
+  //     case 'março':
+  //       numberMonth = '03';
+  //       break;
+  //     case 'abril':
+  //       numberMonth = '04';
+  //       break;
+  //     case 'maio':
+  //       numberMonth = '05';
+  //       break;
+  //     case 'junho':
+  //       numberMonth = '06;'
+  //       break;
+  //     case 'julho':
+  //       numberMonth = '07;'
+  //       break;
+  //     case 'agosto':
+  //       numberMonth = '08';
+  //       break;
+  //     case 'setembro':
+  //       numberMonth = '09';
+  //       break;
+  //     case 'outubro':
+  //       numberMonth = '10';
+  //       break;
+  //     case 'novembro':
+  //       numberMonth = '11';
+  //       break;
+  //     case 'dezembro':
+  //       numberMonth = '12';
+  //       break;
+  //   }
+  //   console.log( 'O mês de ' + nameMonth + ' é representado pelo número ' + numberMonth + '.' );
+  // }
+
+  // Opção2
+  // function getMonthNumber( nameMonth ) {
+  //   var months = {
+  //     janeiro: '01',
+  //     fevereiro: '02',
+  //     'março': '03',
+  //     abril: '04',
+  //     maio: '05',
+  //     junho: '06',
+  //     julho: '07',
+  //     agosto: '08',
+  //     setembro: '09',
+  //     outubro: '10',
+  //     novembro: '11',
+  //     dezembro: '12'
+  //   };
+  //   return console.log( 'O mês de ' + nameMonth + ' é representado pelo número ' + months[ nameMonth ] + '.' );
+  // }
+  // console.log( getMonthNumber( 'março' ) );
+  // console.log( getMonthNumber( 'setembro' ) );
+  // console.log( getMonthNumber( 'dezembro' ) );
+
+  //Opção3
   function getMonthNumber( nameMonth ) {
-    switch ( nameMonth ) {
-      case 'janeiro':
-        numberMonth = '01';
-        break;
-      case 'fevereiro':
-        numberMonth = '02';
-        break;
-      case 'março':
-        numberMonth = '03';
-        break;
-      case 'abril':
-        numberMonth = '04';
-        break;
-      case 'maio':
-        numberMonth = '05';
-        break;
-      case 'junho':
-        numberMonth = '06;'
-        break;
-      case 'julho':
-        numberMonth = '07;'
-        break;
-      case 'agosto':
-        numberMonth = '08';
-        break;
-      case 'setembro':
-        numberMonth = '09';
-        break;
-      case 'outubro':
-        numberMonth = '10';
-        break;
-      case 'novembro':
-        numberMonth = '11';
-        break;
-      case 'dezembro':
-        numberMonth = '12';
-        break;
-    }
-    console.log( 'O mês de ' + nameMonth + ' é representado pelo número ' + numberMonth + '.' );
+    var months = {
+      janeiro: '01',
+      fevereiro: '02',
+      'março': '03',
+      abril: '04',
+      maio: '05',
+      junho: '06',
+      julho: '07',
+      agosto: '08',
+      setembro: '09',
+      outubro: '10',
+      novembro: '11',
+      dezembro: '12'
+    };
+    return months[ nameMonth ];
   }
-  getMonthNumber( 'março' );
-  getMonthNumber( 'setembro' );
-  getMonthNumber( 'dezembro' );
+  console.log( 'O mês de março é representado pelo número ' + getMonthNumber( 'março' ) + '.' );
+  console.log( 'O mês de setembro é representado pelo número ' + getMonthNumber( 'setembro' ) + '.' );
+  console.log( 'O mês de dezembro é representado pelo número ' + getMonthNumber( 'dezembro' ) + '.' );
 
   /*
   Agora, declare uma variável chamada `regexDate` que irá receber a expressão
