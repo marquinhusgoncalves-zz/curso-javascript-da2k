@@ -20,8 +20,7 @@
   no console:
   */
   console.log( 'Adicionando seu nome no texto:' );
-  var newText = text.replace(/(Manuel Marques de Sousa)/g, 'Marcus Vinicius');
-  console.log( newText );
+  console.log( text.replace(/(Manuel Marques de Sousa)/g, 'Marcus Vinicius') );
 
   /*
   Agora, substitua a palavra "brasileiro" por sua cidade natal e mostre no
@@ -29,42 +28,37 @@
   Ex: Se você for da São Paulo, substitua por "paulista".
   */
   console.log( '\nTrocando naturalidade:' );
-  var newText2 = newText.replace(/brasileiro/g, 'paulista');
-  console.log( newText2 );
+  console.log( text.replace(/brasileiro/g, 'paulista') );
 
   /*
   Substitua todos os números por um traço `-`. Cada caractere de número deve
   ser um traço. Mostre o resultado no console:
   */
   console.log( '\nTrocando números por -:' );
-  var newText3 = newText.replace(/\d/g, '-');
-  console.log( newText3 );
+  console.log( text.replace(/\d/g, '-') );
 
   /*
   Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
   minúsculo por "0" (número zero). Mostre o resultado no console:
   */
   console.log( '\nTrocando de "D" a "h" por "0":' );
-  var newText4 = newText.replace(/[A-Za-h]/g, '0');
-  console.log( newText4 );
+  console.log( text.replace(/[A-Za-h]/g, '0') );
 
   /*
   Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
   Mostre o resultado no console:
   */
   console.log( '\nTrocando "A" e "a" por "4":' );
-  var newText5 = newText.replace(/A|a/g, '4');
-  console.log( newText5 );
+  console.log( text.replace(/A|a/g, '4') );
 
   /*
   Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
   o método `toUpperCase()`. Mostre o resultado no console:
   */
   console.log( '\n"O Centauro de Luvas" em caixa alta:' );
-  var newText6 = newText.replace(/O Centauro de Luvas/g, function( regex ) {
+  console.log( text.replace(/O Centauro de Luvas/g, function( regex ) {
     return regex.toUpperCase();
-  });
-  console.log( newText6 );
+  }) );
 
   /*
   Agora iremos substituir as datas no formato "13 de junho de 1804" para
