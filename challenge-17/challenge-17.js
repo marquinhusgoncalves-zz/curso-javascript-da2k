@@ -145,16 +145,38 @@
   console o resultado.
   */
   console.log( '\nReplace de datas:' );
+  // Passando todos os parâmetros
   // function replaceDate() {
-  //   text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function( match, firstGourp, secondGroup) {
+  //   text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function( match, firstGroup, secondGroup) {
   //     getMonthNumber( secondGroup );
   //   });
   // }
   // replaceDate();
+
+  // Salvando a função em uma variável
+  // var a = function () {
+  //   getMonthNumber( arguments[2] );
+  // }
+  // function replaceDate() {
+  //   text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, a );
+  // }
+  // replaceDate();
+
+  // Separando a função e passando para o replace
+  // function a() {
+  //   return getMonthNumber( arguments[2] );
+  // }
+  // function replaceDate() {
+  //   text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, a );
+  // }
+  // replaceDate();
+
+  //Usando o arguments, não passa nenhum parâmetro para a função e chama no arguments
   function replaceDate() {
-    text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function( ) {
+    text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function() {
       getMonthNumber( arguments[2] );
     });
   }
   replaceDate();
+
 })();
