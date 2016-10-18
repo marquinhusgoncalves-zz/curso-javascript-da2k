@@ -216,11 +216,17 @@
   // replaceDate();
 
   //Usando o arguments, não passa nenhum parâmetro para a função e chama no arguments
-  function replaceDate() {
-    text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function() {
-      getMonthNumber( arguments[2] );
-    });
+  // Option1
+  // function replaceDate() {
+  //   text.replace( /(\d{2}) de (ju[nl]ho) de (\d{4})/g, function() {
+  //     getMonthNumber( arguments[2] );
+  //   });
+  // }
+  // replaceDate();
+  // Opção2
+  function replaceDate(regex, day, month, year) {
+    return day + '/' + getMonthNumber( month ) + '/' + year;
   }
-  replaceDate();
+  console.log( text.replace( regexDate, 'beudo' ) );
 
 })();
