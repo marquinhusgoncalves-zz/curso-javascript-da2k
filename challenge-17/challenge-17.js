@@ -178,7 +178,7 @@
   Mostre a regex no console.
   */
   console.log( '\nRegex que vai fazer o match com as datas do texto:' );
-  var regexDate = '/(\d{2}) de (ju[nl]ho) de (\d{4})/g';
+  var regexDate = /(\d{2}) de (ju[nl]ho) de (\d{4})/g;
   console.log( regexDate );
 
   /*
@@ -227,6 +227,6 @@
   function replaceDate(regex, day, month, year) {
     return day + '/' + getMonthNumber( month ) + '/' + year;
   }
-  console.log( text.replace( regexDate, 'beudo' ) );
+  console.log( text.replace( regexDate, replaceDate ) );
 
 })();
