@@ -17,7 +17,13 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
-    // ?
+    function cleanCPF( cpf ) {
+      return cpf.replace( /[\.\-\sx]/g, '');
+    }
+    console.log( cleanCPF( '049-214 3421-1' ) );
+    console.log( cleanCPF( '210.458.522-05' ) );
+    console.log( cleanCPF( '735 500 794 - 22' ) );
+    console.log( cleanCPF( '101.123-131x32' ) );
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -25,8 +31,14 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    // ?
-
+    function correctCPF ( cpf ) {
+      var a = cleanCPF( cpf );
+      return a.substring(0, 3) + '.' + a.substring(3, 6) + '.' + a.substring(6, 9) + '-' + a.substring(9, 11);
+    }
+    console.log( correctCPF( '123.-234x' ) );
+    console.log( correctCPF( '210.458.522-05' ) );
+    console.log( correctCPF( '735 500 794 - 22' ) );
+    console.log( correctCPF( '101.123-131x32' ) );
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
     usando o mínimo de caracteres possíveis na regex.
