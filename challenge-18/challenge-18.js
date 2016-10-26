@@ -129,6 +129,6 @@
         return '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
       }));
     };
-    transform( str );
+    console.log ( transform( str ) );
 
 })();
