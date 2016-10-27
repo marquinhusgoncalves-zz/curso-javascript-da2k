@@ -123,7 +123,7 @@
     console.log( '\nFazer replace dos textos das tags:' );
     var str = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
     var reg = /(<h1>.+<\/h1>)(<p>.+<\/p>)(<footer>.+<\/footer>)/g;
-
+    // Option 1
     function transform( par ) {
       console.log( par.replace( reg, function(a, b, c, d) {
         return '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
