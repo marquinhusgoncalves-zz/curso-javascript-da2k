@@ -122,14 +122,14 @@
     */
     console.log( '\nFazer replace dos textos das tags:' );
     var str = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
-    var reg = /((<h1>)(.+)(<\/h1>))((<p>)(.+)(<\/p>))((<footer>)(.+)(<\/footer>))/g;
+    var reg = /((<.+>)(.+)(<\/.+>))((<.+>)(.+)(<\/.+>))((<.+>)(.+)(<\/.+>))/g;
     var text = 'O texto dentro da tag';
     // Option 1
     function transform( par ) {
-      console.log( par.replace( reg, function(a, b, c, d, e, f, g, h, i, j, k, l, m) {
-        return c + text + ' "h1" é ' + d + e + '\n' +
-               g + text + ' "p" é ' + h + i + '\n' +
-               k + text + ' "footer" é ' + l + m;
+      console.log( par.replace( reg, function(regex, match1, openTag1, contentTag1, closeTag1, match2, openTag2, contentTag2, closeTag2, match3, openTag3, contentTag3, closeTag3) {
+        return openTag1 + text + ' "h1" é ' + contentTag1 + closeTag1 + '\n' +
+               openTag2 + text + ' "p" é ' + contentTag2 + closeTag2 + '\n' +
+               openTag3 + text + ' "footer" é ' + contentTag3 + closeTag3;
       }));
     };
     console.log ( transform( str ) );
