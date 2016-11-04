@@ -122,11 +122,12 @@
     https://regex101.com/#javascript e verifique se as capturas estão
     corretas, para depois aplicar no código ;)
     */
+    // Option 1
     console.log( '\nFazer replace dos textos das tags:' );
     var str = '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>';
     var reg = /((<.+>)(.+)(<\/.+>))((<.+>)(.+)(<\/.+>))((<.+>)(.+)(<\/.+>))/g;
     var text = 'O texto dentro da tag';
-    // Option 1
+
     function transform( par ) {
       console.log( par.replace( reg, function(regex, match1, openTag1, contentTag1, closeTag1, match2, openTag2, contentTag2, closeTag2, match3, openTag3, contentTag3, closeTag3) {
         return openTag1 + text + ' "h1" é ' + contentTag1 + closeTag1 + '\n' +
@@ -135,5 +136,12 @@
       }));
     };
     console.log ( transform( str ) );
+    // Option 2
+    console.log( '\nFazer replace dos textos das tags:' );
+    console.log(
+      '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+      .replace( /<(\w+)>([^<]+)<(\/\w+)>/g, '<$1>O texto dentro da tag "$1" é "$2"</$1>\n'
+        )
+      );
 
 })();
