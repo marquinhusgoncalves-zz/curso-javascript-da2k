@@ -100,6 +100,4 @@
     console.log( hasClass( markup, cssClass ) + ' para a classe ' + cssClass );
   });
 
-
-
 })();
