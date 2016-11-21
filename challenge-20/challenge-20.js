@@ -94,10 +94,10 @@
             alert( 'Preencha o e-mail!' );
         if( $message === '' )
             alert( 'Preencha a mensagem!' );
-        if( $inputEmail === 'invalid' )
+        if( isValidEmail( $inputEmail ) === false )
             alert( 'Entre com um e-mail válido!' );
 
-        if( $inputUsername !== '' && $inputEmail !== '' && $message !== '' && $inputUsername !== '')
+        if( $inputUsername !== '' && $inputEmail !== '' && $message !== '' && isValidEmail( $inputEmail ) !== false)
             confirm( 'Tem certeza que deseja enviar o formulário?' ) ? alert( 'Enviado com sucesso!' ) : alert( 'Não enviado.' );
 
     }, false );
@@ -129,8 +129,8 @@
         - "agua_@evida.br.com"
     */
     function isValidEmail( email ) {
-
+        var regex = /a/g;
+        return regex.test( email );
     }
-    isValidEmail( $inputEmail );
 
 })( document, window );
