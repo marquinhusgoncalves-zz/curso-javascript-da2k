@@ -9,4 +9,9 @@
 - Se não foi, crie uma nova _issue_, coloque um título que tenha a ver com a sua dúvida, e descreva-a com o maior nível de detalhes possíveis, para que possamos te ajudar :)
 
 ## Sumário
+
 Veja o sumário completo do curso [aqui](summary.md).
+
+## Status
+
+Ao final de cada aula e com os exercícios corrigidos commitar com OK
