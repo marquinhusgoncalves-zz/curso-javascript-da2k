@@ -22,37 +22,33 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
   var $buttonStop = document.querySelector( 'button[data-js="button-stop"]' );
   var $buttonReset = document.querySelector( 'button[data-js="button-reset"]' );
   var $input = document.querySelector( ' input[type="text"] ' );
-  var cron;
+  var interval;
   var started = false;
 
-  $buttonStart.addEventListener( 'click', function( event ) {
-    event.preventDefault();
-    if ( !started )
-      cron = window.setInterval( startWatch, 1000 );
-    started = true;
-  } );
+  $buttonStart.addEventListener( 'click', startTimer, false );
+  $buttonStop.addEventListener( 'click', stopTimer, false );
+  $buttonReset.addEventListener( 'click', resetTimer, false );
 
-  function startWatch() {
+  function startTimer() {
+    if ( !started ) {
+      addTimer();
+      started = true;
+    }
+  }
+
+  function addTimer() {
+    interval = window.setTimeout( addTimer, 1000 );
     $input.value++;
   }
 
-  $buttonStop.addEventListener( 'click', function( event ) {
-    event.preventDefault();
-    clearInterval( cron );
+  function stopTimer() {
+    clearInterval( interval );
     started = false;
-  } );
+  }
 
-  $buttonReset.addEventListener( 'click', function( event ) {
-    event.preventDefault();
-    clearInterval( cron );
+  function resetTimer() {
     $input.value = 0;
-    started = false;
-  } );
+    stopTimer();
+  }
 
 })( window, document );
-
-// function timer() {
-//     $input.value++;
-//     window.setTimeout( timer, 1000)
-//   }
-// timer();
