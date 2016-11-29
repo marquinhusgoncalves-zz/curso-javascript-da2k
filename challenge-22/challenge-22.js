@@ -2,7 +2,15 @@
   Crie dois objetos, que serão duas pessoas. Cada um deve ter as propriedades
   `name` e `lastName`, preenchidos com o nome e sobrenome da pessoa.
   */
-  // ?
+  var marcus = {
+    name: Marcus,
+    lastName: Gonçalves
+  }
+
+  var vinicius = {
+    name: Vinicius,
+    lastName: Lourençato
+  }
 
   /*
   Agora crie uma função chamada `getFullName` que retorne as propriedades
