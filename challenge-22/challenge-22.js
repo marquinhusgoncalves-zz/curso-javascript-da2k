@@ -53,7 +53,7 @@
   diferentes, com quantidades variáveis de parâmetros passados.
   */
   // console.log( '\nSomar alguns números:' );
-  console.log( sum( 1, 2, 3 ) );
+  console.log( sum( [1, 2, 3] ) );
   console.log( sum( 1, 2, 3, 4, 5, 6, 7, 8 ) );
   console.log( sum( 10, 20, 30, 40, 50 ) );
 
@@ -76,10 +76,9 @@
   */
   console.log( '\nFunção que limpa entrada do usuário (somente números):' );
   function justNumbers( string ) {
-    var array = string.split( /\D/g );
-    return array;
+    return string.replace(/\D/g, '').split('')
   }
-
+  console.log( justNumbers( userEntry ) );
   /*
   Usando a função acima, faça a limpeza dos valores entrados pelo usuário,
   atribuindo o resultado à uma variável `numbers`.
@@ -93,5 +92,6 @@
   números desse array e mostre o resultado no console.
   */
   console.log( '\nSomar números entrados pelo usuário:' );
-  // ?
+  sum( justNumbers( userEntry ) );
+
 })();
