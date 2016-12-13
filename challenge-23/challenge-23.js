@@ -26,6 +26,10 @@ input;
 (function() {
   'use strict';
 
+var $ce = document.querySelector( 'button[data-js="ce"]' );
 
+$ce.addEventListener( 'click', function() {
+  console.log( $ce.dataset.js );
+} )
 
 })();
