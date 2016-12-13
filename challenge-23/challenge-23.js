@@ -23,3 +23,9 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+(function() {
+  'use strict';
+
+
+
+})();
