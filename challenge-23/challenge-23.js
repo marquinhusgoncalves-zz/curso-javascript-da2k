@@ -26,10 +26,14 @@ input;
 (function() {
   'use strict';
 
-var $ce = document.querySelector( 'button[data-js="ce"]' );
+var $teclas = document.querySelector( '.teclas' );
+var $ce = document.querySelector( 'button[name="ce"]' );
 
-$ce.addEventListener( 'click', function() {
-  console.log( $ce.dataset.js );
+// console.log( $teclas );
+// console.log( $ce.textContent );
+
+$teclas.addEventListener( 'click', function( event ) {
+  console.log( event );
 } )
 
 })();
