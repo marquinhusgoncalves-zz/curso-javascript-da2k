@@ -26,14 +26,65 @@ input;
 (function() {
   'use strict';
 
-var $teclas = document.querySelector( '.teclas' );
 var $ce = document.querySelector( 'button[name="ce"]' );
+var $zero = document.querySelector( 'button[name="zero"]' );
+var $one = document.querySelector( 'button[name="one"]' );
+var $two = document.querySelector( 'button[name="two"]' );
+var $three = document.querySelector( 'button[name="three"]' );
+var $four = document.querySelector( 'button[name="four"]' );
+var $five = document.querySelector( 'button[name="five"]' );
+var $six = document.querySelector( 'button[name="six"]' );
+var $seven = document.querySelector( 'button[name="seven"]' );
+var $eight = document.querySelector( 'button[name="eight"]' );
+var $nine = document.querySelector( 'button[name="nine"]' );
+var $sum = document.querySelector( 'button[name="sum"]' );
+var $sub = document.querySelector( 'button[name="sub"]' );
+var $div = document.querySelector( 'button[name="div"]' );
+var $mult = document.querySelector( 'button[name="mult"]' );
+var $equal = document.querySelector( 'button[name="equal"]' );
 
-// console.log( $teclas );
-// console.log( $ce.textContent );
-
-$teclas.addEventListener( 'click', function( event ) {
-  console.log( event );
+$ce.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value = 0;
+} )
+$zero.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 0;
+} )
+$one.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 1;
+} )
+$two.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 2;
+} )
+$three.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 3;
+} )
+$four.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 4;
+} )
+$five.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 5;
+} )
+$six.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 6;
+} )
+$seven.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 7;
+} )
+$eight.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 8;
+} )
+$nine.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += 9;
+} )
+$sum.addEventListener( 'click', function( event ) {
+} )
+$sub.addEventListener( 'click', function( event ) {
+} )
+$div.addEventListener( 'click', function( event ) {
+} )
+$mult.addEventListener( 'click', function( event ) {
+} )
+$equal.addEventListener( 'click', function( event ) {
 } )
 
 })();
