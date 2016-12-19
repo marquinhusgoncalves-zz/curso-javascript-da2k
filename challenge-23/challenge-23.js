@@ -77,14 +77,19 @@ $nine.addEventListener( 'click', function( event ) {
   document.querySelector( 'input[name="visor"]' ).value += 9;
 } )
 $sum.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += '+';
 } )
 $sub.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += '-';
 } )
 $div.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += '/';
 } )
 $mult.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value += '*';
 } )
 $equal.addEventListener( 'click', function( event ) {
+  document.querySelector( 'input[name="visor"]' ).value = eval( toString( document.querySelector( 'input[name="visor"]' ).value ) );
 } )
 
 })();
