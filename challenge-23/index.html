@@ -7,25 +7,24 @@
 </head>
 <body class="wrapper">
   <section class="calculadora">
-    <!-- <input type="text" disabled value="0" name="visor" class="visor"> --><!-- type text because number not receive simbols -->
-    <input type="text" disabled name="visor" class="visor">
+    <input type="text" value="0" class="visor" data-js="visor" readonly><!-- type text because number not receive simbols -->
       <div class="teclas">
-        <button name="ce" class="btn large">CE</button>
-        <button name="div" class="btn">/</button>
-        <button name="seven" class="btn">7</button>
-        <button name="eight" class="btn">8</button>
-        <button name="nine" class="btn">9</button>
-        <button name="mult" class="btn">*</button>
-        <button name="four" class="btn">4</button>
-        <button name="five" class="btn">5</button>
-        <button name="six" class="btn">6</button>
-        <button name="sub" class="btn">-</button>
-        <button name="one" class="btn">1</button>
-        <button name="two" class="btn">2</button>
-        <button name="three" class="btn">3</button>
-        <button name="sum" class="btn">+</button>
-        <button name="zero" class="btn medium">0</button>
-        <button name="equal" class="btn medium">=</button>
+        <button class="btn large" data-js="button-ce" value="ce">CE</button>
+        <button class="btn" data-js="button-operation" value="/">/</button>
+        <button class="btn" data-js="button-number" value="7">7</button>
+        <button class="btn" data-js="button-number" value="8">8</button>
+        <button class="btn" data-js="button-number" value="9">9</button>
+        <button class="btn" data-js="button-operation" value="*">*</button>
+        <button class="btn" data-js="button-number" value="4">4</button>
+        <button class="btn" data-js="button-number" value="5">5</button>
+        <button class="btn" data-js="button-number" value="6">6</button>
+        <button class="btn" data-js="button-operation" value="-">-</button>
+        <button class="btn" data-js="button-number" value="1">1</button>
+        <button class="btn" data-js="button-number" value="2">2</button>
+        <button class="btn" data-js="button-number" value="3">3</button>
+        <button class="btn" data-js="button-operation" value="+">+</button>
+        <button class="btn medium" data-js="button-number" value="0">0</button>
+        <button class="btn medium" data-js="button-equal"value="=">=</button>
     </div> <!-- teclas -->
   </section> <!-- calculadora -->
   <script src="challenge-23.js"></script>
