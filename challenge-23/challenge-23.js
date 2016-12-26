@@ -77,6 +77,23 @@ $buttonEqual.addEventListener('click', handleClickEqual, false);
 
 function handleClickEqual() {
   removeLastItemIfItIsAnOperator();
+  var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+  var result = allValues.reduce(function(accumulated, actual) {
+    var firstValue = accumulated.slice(0, -1);
+    var operator = accumulated.split('').pop();
+    var lastValue = actual;
+    switch (operator) {
+      case '+':
+        return Number(firstValue) + Number(lastValue);
+      case '-':
+        return Number(firstValue) - Number(lastValue);
+      case 'x':
+        return Number(firstValue) * Number(lastValue);
+      case '÷':
+        return Number(firstValue) / Number(lastValue);
+    }
+  })
+  console.log(result);
 }
 
 })();
