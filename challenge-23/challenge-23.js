@@ -93,7 +93,7 @@ function handleClickEqual() {
         return Number(firstValue) / Number(lastValue);
     }
   })
-  console.log(result);
+  $visor.value = result;
 }
 
 })();
