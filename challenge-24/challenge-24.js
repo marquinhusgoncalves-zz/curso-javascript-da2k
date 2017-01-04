@@ -1,4 +1,5 @@
 (function(win, doc) {
+  'use strict';
   /*
   Nossa calculadora agora está funcional! A ideia desse desafio é modularizar
   o código, conforme vimos na aula anterior. Quebrar as responsabilidades
@@ -81,8 +82,12 @@
     var firstValue = accumulated.slice(0, -1);
     var operator = accumulated.split('').pop();
     var lastValue = removeLastItemIfItIsAnOperator(actual);
-    var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
+    var lastOperator = getLastOperation(actual);
     return doOperation(operator, firstValue, lastValue) + lastOperator;
+  }
+
+  function getLastOperation(value) {
+    return isLastItemAnOperation(value) ? value.split('').pop() : '';
   }
 
   function doOperation(operator, firstValue, lastValue) {
