@@ -11,7 +11,6 @@
   - faça refactories para melhorar esse código, mas de forma que o mantenha com a
   mesma funcionalidade.
   */
-
   var $visor = doc.querySelector('[data-js="visor"]');
   var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
   var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
