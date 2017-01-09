@@ -31,7 +31,7 @@ desafio os experimentos legais que você conseguir desenvolver :D
   // el.classList.toggle('bg');
   }
 
-  Array.prototype.forEach.call( $title, function( title ) {
+  Array.prototype.forEach.call( title, function( title ) {
     title.addEventListener( 'click', handleClickTitle, false );
   });
 
