@@ -35,4 +35,10 @@ desafio os experimentos legais que você conseguir desenvolver :D
     title.addEventListener( 'click', handleClickTitle, false );
   });
 
+  setInterval(function() {
+    var clock = document.getElementById('clock');
+    clock.classList.add('effect');
+    clock.value = new Date();
+  }, 1000);
+
 })();
