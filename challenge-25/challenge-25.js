@@ -21,9 +21,12 @@ desafio os experimentos legais que você conseguir desenvolver :D
 
   function handleClickTitle(e) {
     var el = e.target;
+    if(e.target && !e.target.texto) {
+      e.target.texto = e.target.innerHTML;
+    }
     if(el.classList.contains('bg')) {
      el.classList.remove('bg');
-     el.innerHTML = 'Teste';
+     el.innerHTML = e.target.texto;
     }else {
      el.classList.add('bg');
      el.innerHTML = 'Clicou me';
