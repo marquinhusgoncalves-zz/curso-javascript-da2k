@@ -22,7 +22,7 @@ desafio os experimentos legais que você conseguir desenvolver :D
   function handleClickTitle(e) {
     var el = e.target;
     if(e.target && !e.target.texto) {
-      e.target.texto = el.innerHTML;
+      e.target.texto = e.target.innerHTML;
     }
     if(el.classList.contains('bg')) {
      el.classList.remove('bg');
