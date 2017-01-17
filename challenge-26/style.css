@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+section {
+  margin: 15px;
+  border: 1px solid #000;
+  width: 205px;
+}
+button {
+  margin-top: 15px;
+}
+button:first-child {
+  margin-left: 15px;
+}
+.box {
+  display: none;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #000;
+  margin: 15px;
+  padding: 10px;
+}
+.active {
+  display: inline-block;
+}

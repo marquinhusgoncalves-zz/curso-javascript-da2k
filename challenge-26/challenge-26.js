@@ -29,3 +29,17 @@ $a.on('click', function(e) {
 
 console.log('Elementos selecionados:', $a.get());
 console.log('$a é filho de body?', $a.get()[0].parentNode === document.body);
+
+var tagName = document.querySelector('h1');
+var tagSubName = document.querySelector('h2');
+
+if(tagName.hasAttribute('data-mar')) {
+  console.log(tagName.getAttribute('data-mar'));
+}else {
+  console.log('Não');
+}
+
+var cln = tagName.cloneNode(true);
+console.log(cln);
+
+tagSubName.appendChild(cln);
