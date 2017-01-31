@@ -80,17 +80,38 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   //- isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
 
   DOM.prototype.isArray = function isArray( param ) {
-    return Object.prototype.toString.call( param ) === 'object Array';
+    return Object.prototype.toString.call( param ) === '[object Array]';
   };
 
   DOM.prototype.isObject = function isObject( param ) {
-    return Object.prototype.toString.call( param ) === 'object Object';
+    return Object.prototype.toString.call( param ) === '[object Object]';
   };
 
   DOM.prototype.isFunction = function isFunction( param ) {
-    return Object.prototype.toString.call( param ) === 'object Function';
+    return Object.prototype.toString.call( param ) === '[object Function]';
   };
 
-  console.log(DOM.prototype.isObject({}));
+  DOM.prototype.isNumber = function isNumber( param ) {
+    return Object.prototype.toString.call( param ) === '[object Number]';
+  };
+
+  DOM.prototype.isString = function isString( param ) {
+    return Object.prototype.toString.call( param ) === '[object String]';
+  };
+
+  DOM.prototype.isBoolean = function isBoolean( param ) {
+    return Object.prototype.toString.call( param ) === '[object Boolean]';
+  };
+
+  DOM.prototype.isNull = function isNull( param ) {
+    return Object.prototype.toString.call( param ) === '[object Null]'
+    || Object.prototype.toString.call( param ) === '[object Undefined]';
+  };
+
+  console.log(DOM.prototype.isArray( [1, 2, 3] ) );
+  console.log(DOM.prototype.isObject({ }));
+  console.log(DOM.prototype.isFunction( function a(){} ) );
+  console.log(DOM.prototype.isNull( null ) );
+
 
 })(document, window);
