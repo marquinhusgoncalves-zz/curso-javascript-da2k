@@ -25,3 +25,19 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+(function(doc, win) {
+  'use strict';
+
+  function clickButton() {
+    var clickButton = document.querySelector('button[type="submit"]');
+
+    clickButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      var inputCep = document.querySelector('input[type="text"]');
+      console.log(inputCep.value);
+    });
+  }
+
+  clickButton();
+
+})(document, window);
