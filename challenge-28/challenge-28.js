@@ -38,6 +38,21 @@
     });
   }
 
-  clickButton();
+  function cleanInput() {
+    var cleanInputCep = document.querySelector('input[type="text"]');
+    cleanInputCep.addEventListener('keyup', function() {
+      cleanInputCep.value = cleanInputCep.value.replace(/\D/,'');
+      if(cleanInputCep.value.length === 5) {
+        cleanInputCep.value += '-';
+      }
+    });
+  }
+
+  function init() {
+    clickButton();
+    cleanInput();
+  }
+
+  init();
 
 })(document, window);
