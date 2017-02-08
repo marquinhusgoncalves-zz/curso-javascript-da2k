@@ -32,25 +32,54 @@
     var clickButton = document.querySelector('button[type="submit"]');
 
     clickButton.addEventListener('click', function(e) {
+      var msg = document.querySelector('[data-js="message"]');
       e.preventDefault();
-      var inputCep = document.querySelector('input[type="text"]');
-      console.log(inputCep.value);
+      var inputCEP = document.querySelector('input[type="text"]');
+      var cep = cleanInputCEP(inputCEP);
+      msg.innerHTML = 'Buscando informações para o CEP ' + cep + '...';
+      getAjaxresponse(cep);
+      msg.innerHTML = '';
     });
   }
 
-  function cleanInput() {
+  function maskInputCEP() {
     var cleanInputCep = document.querySelector('input[type="text"]');
     cleanInputCep.addEventListener('keyup', function() {
-      cleanInputCep.value = cleanInputCep.value.replace(/\D/,'');
+      cleanInputCep.value = cleanInputCep.value.replace(/[^0-9\-]/, '');
       if(cleanInputCep.value.length === 5) {
         cleanInputCep.value += '-';
       }
     });
   }
 
+  function cleanInputCEP(string) {
+    return string.value.replace(/-/g, '');
+  }
+
+  function readData(data) {
+    document.querySelector('#logradouro').innerHTML = data.logradouro;
+    console.log(data.bairro);
+    console.log(data.uf);
+    console.log(data.localidade);
+    console.log(data.cep);
+  }
+
+  function getAjaxresponse(cep) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://viacep.com.br/ws/' + cep + '/json/');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        readData(JSON.parse(xhr.responseText));
+      }else {
+        console.log('Não encontramos o endereço para o CEP ' + cep + '.');
+      }
+    };
+    xhr.send();
+  }
+
   function init() {
     clickButton();
-    cleanInput();
+    maskInputCEP();
   }
 
   init();
