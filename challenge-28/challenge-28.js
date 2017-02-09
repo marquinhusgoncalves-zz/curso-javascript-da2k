@@ -32,8 +32,8 @@
     var clickButton = document.querySelector('button[type="submit"]');
 
     clickButton.addEventListener('click', function(e) {
-      var msg = document.querySelector('[data-js="message"]');
       e.preventDefault();
+      var msg = document.querySelector('[data-js="message"]');
       var inputCEP = document.querySelector('input[type="text"]');
       var cep = cleanInputCEP(inputCEP);
       msg.innerHTML = 'Buscando informações para o CEP ' + cep + '...';
@@ -58,10 +58,10 @@
 
   function readData(data) {
     document.querySelector('#logradouro').innerHTML = data.logradouro;
-    console.log(data.bairro);
-    console.log(data.uf);
-    console.log(data.localidade);
-    console.log(data.cep);
+    document.querySelector('#bairro').innerHTML = data.bairro;
+    document.querySelector('#uf').innerHTML = data.uf;
+    document.querySelector('#localidade').innerHTML = data.localidade;
+    document.querySelector('#cep').innerHTML = data.cep;
   }
 
   function getAjaxresponse(cep) {

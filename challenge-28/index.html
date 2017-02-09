@@ -3,25 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Challenge-28</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Formulário</h1>
-  <form action="">
-    <label for="">Digite seu CEP</label>
-    <input name="cep" type="text" maxlength="9" placeholder="CEP" required>
-    <button type="submit">Consultar</button>
-  </form>
-  <section class="information">
-    <p>Logradouro</p><span id="logradouro"></span>
-    <p>Bairro</p><span id="bairro"></span>
-    <p>Estado</p><span id="uf"></span>
-    <p>Cidade</p><span id="localidade"></span>
-    <p>CEP</p><span id="cep"></span>
-  </section>
-  <section class="message">
-    <p class="status" data-js="message"></p>
-  </section>
-<script src="challenge-28.js"></script>
+  <div class="container">
+    <header class="card-panel">
+      <h1 class="center-align">Formulário</h1>
+    </header>
+    <form action="" class="row">
+      <label class="col s12" for="">Digite seu CEP</label>
+      <input class="col s6" name="cep" type="text" maxlength="9" placeholder="CEP" required>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Consultar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+    <section information">
+      <div class="row">
+        <p class="col s2">Logradouro:</p><p class="col s2" id="logradouro"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">Bairro:</p><p class="col s2" id="bairro"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">Estado:</p><p class="col s2" id="uf"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">Cidade:</p><p class="col s2" id="localidade"></p>
+      </div>
+      <div class="row">
+        <p class="col s2">CEP:</p><p class="col s2" id="cep"></p>
+      </div>
+    </section>
+    <section class="row message">
+      <p class="status" data-js="message"></p>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="challenge-28.js"></script>
 </body>
 </html>
