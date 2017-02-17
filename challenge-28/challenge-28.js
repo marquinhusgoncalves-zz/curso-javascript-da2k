@@ -29,12 +29,12 @@
   'use strict';
 
   function clickButton() {
-    var clickButton = document.querySelector('button[type="submit"]');
+    var clickButton = document.querySelector('[data-js="button-send"]');
 
     clickButton.addEventListener('click', function(e) {
       e.preventDefault();
       var msg = document.querySelector('[data-js="message"]');
-      var inputCEP = document.querySelector('input[type="text"]');
+      var inputCEP = document.querySelector('[data-js="enter-cep"]');
       var cep = cleanInputCEP(inputCEP);
       msg.innerHTML = 'Buscando informações para o CEP ' + cep + '...';
       getAjaxresponse(cep);
@@ -43,7 +43,7 @@
   }
 
   function maskInputCEP() {
-    var cleanInputCep = document.querySelector('input[type="text"]');
+    var cleanInputCep = document.querySelector('[data-js="enter-cep"]');
     cleanInputCep.addEventListener('keyup', function() {
       cleanInputCep.value = cleanInputCep.value.replace(/[^0-9\-]/, '');
       if(cleanInputCep.value.length === 5) {
