@@ -57,11 +57,11 @@
   }
 
   function readData(data) {
-    document.querySelector('#logradouro').innerHTML = data.logradouro;
-    document.querySelector('#bairro').innerHTML = data.bairro;
-    document.querySelector('#uf').innerHTML = data.uf;
-    document.querySelector('#localidade').innerHTML = data.localidade;
-    document.querySelector('#cep').innerHTML = data.cep;
+    document.querySelector('[data-js="logradouro"]').innerHTML = data.logradouro;
+    document.querySelector('[data-js="bairro"]').innerHTML = data.bairro;
+    document.querySelector('[data-js="uf"]').innerHTML = data.uf;
+    document.querySelector('[data-js="localidade"]').innerHTML = data.localidade;
+    document.querySelector('[data-js="cep"]').innerHTML = data.cep;
   }
 
   function getAjaxresponse(cep) {
