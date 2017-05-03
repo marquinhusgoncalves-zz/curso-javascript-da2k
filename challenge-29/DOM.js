@@ -23,6 +23,9 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   "use strict";
 
   function DOM(elements) {
+    if(!(this instanceof DOM))
+      return new DOM(elements);
+
     this.element = document.querySelectorAll(elements);
   }
 
@@ -58,17 +61,19 @@ O método isNull deve retornar `true` se o valor for null ou undefined.
   DOM.prototype.on = function on(eventType, callback) {
     Array.prototype.forEach.call(this.element, function(element) {
       element.addEventListener(eventType, callback, false);
-    })
+    });
   };
 
   DOM.prototype.off = function off(eventType, callback) {
     Array.prototype.forEach.call(this.element, function(element) {
       element.removeEventListener(eventType,callback, false);
-    })
+    });
   };
   
-  DOM.prototype.get = function get() {
-    return this.element;
+  DOM.prototype.get = function get(index) {
+    if(!index)
+      return this.element[0];
+    return this.element[index];
   };
 
   DOM.prototype.forEach = function forEach() {
