@@ -1,0 +1,13 @@
+.container {
+  width: 100px;
+  height: 100px;
+}
+.blue {
+  background-color: #0000ff;
+}
+.red {
+  background-color: #ff0000;
+}
+.green {
+  background-color: #00ff00;
+}
