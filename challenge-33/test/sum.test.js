@@ -23,4 +23,9 @@ describe('# SUM', function() {
   it('Should SUM retunr an error if the parameter has not a number', function() {
     expect(sum( 'a', 'b' )).to.be.an('error');
   });
+
+  it('Assert', function() {
+    var assert = require('assert');
+    assert.equal(sum(20,30), 50, 'Message');
+  })
 });
